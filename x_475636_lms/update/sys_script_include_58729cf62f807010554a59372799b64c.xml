@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_475636_lms.HotelMngDateUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>to validate start and end date. with SI: dateValidation and BR: From and To Date Past Verification</description>
+        <name>HotelMngDateUtils</name>
+        <script><![CDATA[var HotelMngDateUtils = Class.create();
+HotelMngDateUtils.prototype = {
+    initialize: function() {
+    },
+getDateValidation: function(){
+		var nowDate = new GlideDateTime();
+	var fromDate = new GlideDateTime(current.start_date);
+	var toDate = new GlideDateTime(current.end_date);
+	if(fromDate.before(nowDate) || toDate.before(nowDate)){
+		gs.addErrorMessage("Please choose a date which is not in Past");
+		current.setAbortAction(true);
+}
+	if(fromDate.after(toDate)){
+	gs.addErrorMessage("Please choose To date greater than From date");
+		current.setAbortAction(true);
+	}
+	},
+	
+	//From and To Date Past Verification(BR) --> dateValidation(SI) --> HotelMngDateUtils(SI)
+
+    type: 'HotelMngDateUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-14 13:58:04</sys_created_on>
+        <sys_id>58729cf62f807010554a59372799b64c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>HotelMngDateUtils</sys_name>
+        <sys_package display_value="Leave Management System" source="x_475636_lms">bfea6b702f732010554a59372799b600</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave Management System">bfea6b702f732010554a59372799b600</sys_scope>
+        <sys_update_name>sys_script_include_58729cf62f807010554a59372799b64c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-18 05:51:33</sys_updated_on>
+    </sys_script_include>
+</record_update>

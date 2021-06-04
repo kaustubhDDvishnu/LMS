@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_475636_lms.LMS_Ajax</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>This Script include works to get the diffrence between start date and end date of the leaves to get duration value to apply</description>
+        <name>LMS_Ajax</name>
+        <script><![CDATA[var LMS_Ajax = Class.create();
+LMS_Ajax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+	getDateDiff : function()
+	{
+		var d1 = new GlideDate();
+		d1.setDisplayValue(this.getParameter('sysparm_start'));
+		
+		var d2 = new GlideDate();
+		d2.setDisplayValue(this.getParameter('sysparm_end'));
+		
+		var duration = GlideDate.subtract(d1,d2); // diff between start and end date
+		return duration.getNumericValue(); //convert duration value in Numeric form from date format
+		//this script include connect with client script "setLeaveDuration" which converts this duration value(milliseconds)
+		
+		
+	},
+	
+	//PART2
+	//Populate Leave Details
+	//Script Include: LMS_Ajax-->getLeaveBucket
+	//Client Script:  Populate Leave Details
+	getLeaveBucket : function()
+	{
+		var gr = new GlideRecord('x_475636_lms_leave_bucket');
+		gr.addQuery('employee', this.getParameter('sysparm_user'));
+		gr.addQuery('leave_type',this.getParameter('sysparm_leavetype'));
+		gr.query();
+		if(gr.next())
+			{
+				var leaveDetails = {}; // empty JSON Object
+				leaveDetails.accrued = '' + gr.accrued;
+				leaveDetails.balance = '' + gr.balance;
+				leaveDetails.taken = '' + gr.taken;
+				
+				return JSON.stringify(leaveDetails); //stringify the JSON object to update data at once.
+				
+			}
+		
+	},
+	
+    type: 'LMS_Ajax'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-07 11:57:14</sys_created_on>
+        <sys_id>0672bb1c2f043010554a59372799b607</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>LMS_Ajax</sys_name>
+        <sys_package display_value="Leave Management System" source="x_475636_lms">bfea6b702f732010554a59372799b600</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave Management System">bfea6b702f732010554a59372799b600</sys_scope>
+        <sys_update_name>sys_script_include_0672bb1c2f043010554a59372799b607</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-11 13:24:52</sys_updated_on>
+    </sys_script_include>
+</record_update>

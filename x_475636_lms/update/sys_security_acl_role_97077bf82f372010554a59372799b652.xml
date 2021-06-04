@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 15:11:03</sys_created_on>
+        <sys_id>97077bf82f372010554a59372799b652</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_475636_lms_leave_calculator.x_475636_lms.leave_calculator_user</sys_name>
+        <sys_package display_value="Leave Management System" source="x_475636_lms">bfea6b702f732010554a59372799b600</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave Management System">bfea6b702f732010554a59372799b600</sys_scope>
+        <sys_security_acl display_value="x_475636_lms_leave_calculator">df077bf82f372010554a59372799b64d</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_97077bf82f372010554a59372799b652</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 15:11:03</sys_updated_on>
+        <sys_user_role display_value="x_475636_lms.leave_calculator_user" name="x_475636_lms.leave_calculator_user">0b07fb782f372010554a59372799b668</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

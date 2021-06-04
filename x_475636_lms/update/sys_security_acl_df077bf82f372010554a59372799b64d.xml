@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition/>
+        <description>Default access control on x_475636_lms_leave_calculator</description>
+        <name>x_475636_lms_leave_calculator</name>
+        <operation display_value="read">read</operation>
+        <script/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-26 15:11:03</sys_created_on>
+        <sys_id>df077bf82f372010554a59372799b64d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_475636_lms_leave_calculator</sys_name>
+        <sys_package display_value="Leave Management System" source="x_475636_lms">bfea6b702f732010554a59372799b600</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave Management System">bfea6b702f732010554a59372799b600</sys_scope>
+        <sys_update_name>sys_security_acl_df077bf82f372010554a59372799b64d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 15:11:03</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>
